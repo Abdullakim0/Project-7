@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Drawing</title>
+    <style>
+        #canvas {
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw a yellow circle for the face
+        ctx.beginPath();
+        ctx.arc(200, 200, 100, 0, 2 * Math.PI);
+        ctx.fillStyle = 'yellow';
+        ctx.fill();
+
+        // Draw the eyes
+        ctx.beginPath();
+        ctx.arc(150, 150, 15, 0, 2 * Math.PI); // Left eye
+        ctx.arc(250, 150, 15, 0, 2 * Math.PI); // Right eye
+        ctx.fillStyle = 'white';
+        ctx.fill();
+
+        // Draw the pupils
+        ctx.beginPath();
+        ctx.arc(150, 150, 5, 0, 2 * Math.PI); // Left pupil
+        ctx.arc(250, 150, 5, 0, 2 * Math.PI); // Right pupil
+        ctx.fillStyle = 'black';
+        ctx.fill();
+
+        // Draw the mouth (smile)
+        ctx.beginPath();
+        ctx.arc(200, 200, 70, 0.2 * Math.PI, 0.8 * Math.PI);
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 5;
+        ctx.stroke();
+    </script>
+</body>
+</html>
